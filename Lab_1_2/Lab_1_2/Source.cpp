@@ -10,7 +10,10 @@ Payment makePayment(string fname, double pr, int yr, double percentOA, int amoun
 {
 	Payment p;
 	if (!p.Init(fname, pr, yr, percentOA, amountOSD, amountOWD))
+	{
 		cout << "Error" << endl;
+		exit(0);
+	}
 
 	return p;
 }

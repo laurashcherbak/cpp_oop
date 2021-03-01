@@ -16,24 +16,43 @@ int Goods::GetSecond() const
 	return second;
 }
 
-void Goods::SetFirst(double value)
+bool Goods::SetFirst(double value)
 {
 	if (value >= 0)
+	{
 		first = value;
+		return true;
+	}
+	else
+		return false;
 }
 
-void Goods::SetSecond(double value)
+bool Goods::SetSecond(double value)
 {
 	if (value >= 0)
+	{
 		second = value;
+		return true;
+	}
+	else
+		return false;
 }
 
 bool Goods::Init(double f, int s)
 {
-	SetFirst(f);
-	SetSecond(s);
+	//SetFirst(f);
+	//SetSecond(s);
 
-	return f >= 0 && s >= 0;
+	if (SetFirst(f) && SetSecond(s))
+	{
+		return true;
+	}
+	else
+	{
+		//cout << "Error" << endl;
+		return false;
+	}
+
 /*
 	if (f > 0 && s > 0)
 	{

@@ -29,7 +29,8 @@ int main()
 	CharLine c2;
 	c2.Init(5);
 	c2.Read(5);
-	c.Сoncatenation(c.getS(), c2.getS());
+	cout << "Concatenation strings : " << c.Сoncatenation(c.getS(), c2.getS()) << endl;
+
 
 	cout << " Strings '" << c.getS() << "' and '" << c2.getS() << "' are "
 		<< (c.CompareStr(c, c2) ? "" : "not ")

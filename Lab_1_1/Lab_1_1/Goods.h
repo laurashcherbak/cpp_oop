@@ -12,8 +12,8 @@ private:
 public:
 	double GetFirst() const;
 	int GetSecond() const;
-	void SetFirst(double value);
-	void SetSecond(double value);
+	bool SetFirst(double value);
+	bool SetSecond(double value);
 
 	bool Init(double first, int second);
 	void Read();

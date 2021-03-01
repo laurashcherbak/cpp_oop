@@ -70,14 +70,13 @@ bool CharLine::CheckChar(char ch)
 	return (strchr(s, ch) != NULL) ? true : false;
 }
 
-void CharLine::Сoncatenation(char *s1, char *s2)
+char* CharLine::Сoncatenation(char *s1, char *s2)
 {
 	char* resStr = new char[strlen(s1) + strlen(s2) + 1];
 	strcpy(resStr, s1);
 	strcat(resStr, s2);
-	cout << "Concatenation strings : " << resStr << endl;
-
 	setS(resStr);
+	return resStr;
 }
 
 bool CharLine::CompareStr(CharLine s1, CharLine s2)

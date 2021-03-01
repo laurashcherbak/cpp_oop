@@ -23,7 +23,7 @@ public:
 	void Display();
 	void DisplaySn(int i);
 	bool CheckChar(char ch);
-	void Сoncatenation(char* s1, char* s2);
+	char* Сoncatenation(char* s1, char* s2);
 	bool CompareStr(CharLine s1, CharLine s2);
 	bool CheckSubStr(string search);
 	string toString();

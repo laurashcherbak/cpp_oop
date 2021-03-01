@@ -9,8 +9,10 @@ using namespace std;
 Goods makeGoods(double f, int s)
 {
 	Goods g;
-	if (!g.Init(f, s))
+	if (!g.Init(f, s)) {
 		cout << "Error" << endl;
+		exit(0);
+	}
 
 	return g;
 }
