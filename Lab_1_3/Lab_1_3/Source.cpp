@@ -22,15 +22,22 @@ int main()
 	char ch;
 	cout << "Enter symbol for test : ";
 	cin >> ch;
-	c.CheckChar(ch);
+	cout << "Symbol '" << ch << "' "
+		<< (c.CheckChar(ch) ? "exists" : "not exist")
+		<< " in the String" << endl;
 
 	CharLine c2;
 	c2.Init(5);
 	c2.Read(5);
 	c.Сoncatenation(c.getS(), c2.getS());
 
-	c.CompareStr(c, c2);
-	c.CheckSubStr(c2.getS());
+	cout << " Strings '" << c.getS() << "' and '" << c2.getS() << "' are "
+		<< (c.CompareStr(c, c2) ? "" : "not ")
+		<< "equal" << endl;
+
+	cout << " Substring '" << c2.getS() << "' is "
+		<< (c.CheckSubStr(c2.getS()) ? "" : "not ")
+		<< "found in the String '" << c.getS() << "'" << endl;
 
 	return 0;
 }

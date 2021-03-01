@@ -65,11 +65,9 @@ string CharLine::toString()
 	return s;
 }
 
-void CharLine::CheckChar(char ch)
+bool CharLine::CheckChar(char ch)
 {
-	cout << "Symbol '" << ch << "' "
-		<< ((strchr(s, ch) != NULL) ? "exists" : "not exist")
-		<< " in the String" << endl;
+	return (strchr(s, ch) != NULL) ? true : false;
 }
 
 void CharLine::Сoncatenation(char *s1, char *s2)
@@ -82,17 +80,13 @@ void CharLine::Сoncatenation(char *s1, char *s2)
 	setS(resStr);
 }
 
-void CharLine::CompareStr(CharLine s1, CharLine s2)
+bool CharLine::CompareStr(CharLine s1, CharLine s2)
 {
-	cout << " Strings '" << s1.getS() << "' and '" << s2.getS() << "' are "
-		<< ((s1.toString().find(s2.toString()) > s1.getN()
-			&& s2.toString().find(s1.toString()) > s2.getN()) ? "" : "not ")
-		<< "equal" << endl;
+	return ((s1.toString().find(s2.toString()) > s1.getN()
+		&& s2.toString().find(s1.toString()) > s2.getN()) ? true : false);
 }
 
-void CharLine::CheckSubStr(string search)
+bool CharLine::CheckSubStr(string search)
 {
-	cout << " Substring '" << search << "' is "
-		<< (toString().find(search) > 0 ? "" : "not ")
-		<< "found in the String '" << getS() << "'" << endl;
+	return (toString().find(search) > 0 ? true : false);
 }

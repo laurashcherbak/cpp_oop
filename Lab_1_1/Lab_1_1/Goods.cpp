@@ -20,16 +20,12 @@ void Goods::SetFirst(double value)
 {
 	if (value >= 0)
 		first = value;
-	else
-		first = -1;
 }
 
 void Goods::SetSecond(double value)
 {
 	if (value >= 0)
 		second = value;
-	else
-		second = -1;
 }
 
 bool Goods::Init(double f, int s)

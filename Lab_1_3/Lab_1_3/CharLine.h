@@ -22,10 +22,10 @@ public:
 	void Read(int N);
 	void Display();
 	void DisplaySn(int i);
-	void CheckChar(char ch);
+	bool CheckChar(char ch);
 	void Сoncatenation(char* s1, char* s2);
-	void CompareStr(CharLine s1, CharLine s2);
-	void CheckSubStr(string search);
+	bool CompareStr(CharLine s1, CharLine s2);
+	bool CheckSubStr(string search);
 	string toString();
 
 };
