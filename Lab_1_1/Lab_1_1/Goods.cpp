@@ -24,7 +24,10 @@ bool Goods::SetFirst(double value)
 		return true;
 	}
 	else
+	{
+		first = 0;
 		return false;
+	}
 }
 
 bool Goods::SetSecond(double value)
@@ -35,7 +38,10 @@ bool Goods::SetSecond(double value)
 		return true;
 	}
 	else
+	{
+		second = 0;
 		return false;
+	}
 }
 
 bool Goods::Init(double f, int s)
