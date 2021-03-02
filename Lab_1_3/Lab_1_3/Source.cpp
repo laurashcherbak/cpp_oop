@@ -29,11 +29,11 @@ int main()
 	CharLine c2;
 	c2.Init(5);
 	c2.Read(5);
-	cout << "Concatenation strings : " << c.Сoncatenation(c.getS(), c2.getS()) << endl;
+	cout << "Concatenation strings : " << Сoncatenation(c, c2) << endl;
 
 
 	cout << " Strings '" << c.getS() << "' and '" << c2.getS() << "' are "
-		<< (c.CompareStr(c, c2) ? "" : "not ")
+		<< (CompareStr(c, c2) ? "" : "not ")
 		<< "equal" << endl;
 
 	cout << " Substring '" << c2.getS() << "' is "

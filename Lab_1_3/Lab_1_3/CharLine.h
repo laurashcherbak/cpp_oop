@@ -20,12 +20,12 @@ public:
 
 	bool Init(int N);
 	void Read(int N);
-	void Display();
-	void DisplaySn(int i);
-	bool CheckChar(char ch);
-	char* Сoncatenation(char* s1, char* s2);
-	bool CompareStr(CharLine s1, CharLine s2);
-	bool CheckSubStr(string search);
-	string toString();
+	void Display() const;
+	void DisplaySn(int i) const;
+	bool CheckChar(char ch) const;
+	friend char* Сoncatenation(CharLine& s1, CharLine& s2);
+	friend bool CompareStr(CharLine s1, CharLine s2);
+	bool CheckSubStr(string search) const;
+	string toString() const;
 
 };
