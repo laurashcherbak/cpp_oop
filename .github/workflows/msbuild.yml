@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-      - master/Lab_[*]_[*]
-      - Lab_[*]_[*]/Lab_[*]_[*]/*
+      - master
+      - Lab_[*]_[*]/*
 
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FILE_PATH: .
+  SOLUTION_FILE_PATH: .\Lab_[*]_[*]
 
   # Configuration type to build.
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
@@ -42,6 +42,6 @@ jobs:
 
     - name: Run VSTest
       id: run_vstest
-      working-directory: $\x64\Debug\
+      working-directory: $\x64\Release\
       run: vstest.console.exe /Platform:x64 .\UnitTests.dll
       
