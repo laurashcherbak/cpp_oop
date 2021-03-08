@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 #include "CppUnitTest.h"
-#include "../Lab_1_2/Payment.h"
-#include "../Lab_1_2/Payment.cpp"
+#include "../Lab/Payment.h"
+#include "../Lab/Payment.cpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

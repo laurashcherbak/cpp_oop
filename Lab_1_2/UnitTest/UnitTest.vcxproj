@@ -168,7 +168,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lab_1_2\Lab_1_2.vcxproj">
+    <ProjectReference Include="..\Lab\Lab.vcxproj">
       <Project>{16491cb7-e968-4d42-9b43-2411c5427376}</Project>
     </ProjectReference>
   </ItemGroup>

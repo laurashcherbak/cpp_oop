@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab_1_2", "Lab_1_2\Lab_1_2.vcxproj", "{16491CB7-E968-4D42-9B43-2411C5427376}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab", "Lab\Lab.vcxproj", "{16491CB7-E968-4D42-9B43-2411C5427376}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "UnitTest\UnitTest.vcxproj", "{0F8E1DAB-9CDC-4F8B-BEFB-4106EF800832}"
 EndProject
