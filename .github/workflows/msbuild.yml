@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master/Lab_1_1
+      - master/*/*
       - Lab*/Lab*/*
 
 env:
