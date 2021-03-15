@@ -11,35 +11,42 @@
 
 CharLine::CharLine()
 {
-	int _N = 0;
-	char* _s;
-	_s = new char[_N + 1];
+	setN(0);
+	int _N = getN() + 1;
+	char* _s = new char[_N];
 	strcpy(_s, "");
-	setN(_N); setS(_s);
+	setS(_s);
+	delete[] _s;
 }
 
 CharLine::CharLine(const char* s)
 {
-	int _N = strlen(s);
-	cout << _N << endl;
-	char* _s;
-	_s = new char[_N + 1];
+	setN((int)strlen(s));
+	int _N = getN() + 1;
+	char* _s = new char[_N];
 	strcpy(_s, s);
-	setN(_N); setS(_s);
+	setS(_s);
+	delete[] _s;
 }
 
 CharLine::CharLine(const char* s, int N)
 {
-	int _N = N;
-	char* _s;
-	_s = new char[_N + 1];
+	setN(N);
+	int _N = getN() + 1;
+	char* _s = new char[_N];
 	strcpy(_s, s);
-	setN(_N); setS(_s);
+	setS(_s);
+	delete[] _s;
 }
 
 CharLine::CharLine(const CharLine& c)
 {
-	setN(c.N); setS(c.s);
+	setN(c.getN()); setS(c.getS());
+}
+
+CharLine::~CharLine()
+{
+	delete[] s;
 }
 
 bool CharLine::setN(int value)
@@ -57,39 +64,47 @@ void CharLine::setS(char* value)
 {
 	// Set N based on lenght of str
 	//setN(strlen(value));
-	s = new char[N + 1];
-	strcpy(s, value);
+	int _N = getN() + 1;
+	s = new char[_N];
+	strncpy(s, value, getN());
 	//s = value;
-	s[N] = '\0';
+	s[getN()] = '\0';
 }
 
 bool CharLine::Init(int N)
 {
 	setN(N);
-	setS(s);
+	stringstream sout;
+	for (int i = 0; i < N; i++)
+	{
+		sout << " ";
+	}
+	int _N = getN() + 1;
+	char* _s = new char[_N];
+	strncpy(_s, sout.str().c_str(), getN());
+	_s[getN()] = '\0';
+	setS(_s);
+	delete[] _s;
 	return true;
 }
 
 void CharLine::Read(int N)
 {
 	Init(N);
+	int _N = getN() + 1;
+	char* _s = new char[_N];
 	cout << "Input string : ";
 	int i = 0;
-	do {
-		cin >> s[i];
-		i++;
-	} while (i < N);
-	s[i] = '\0';
+	cin >> _s;
+	_s[_N - 1] = '\0';
+	setS(_s);
+	delete[] _s;
 }
 
 void CharLine::Display() const
 {
 	cout << "Display : ";
-	for (int i = 0; i < N; i++)
-	{
-		cout << s[i];
-	}
-	cout << endl;
+	cout << getS() << endl;
 }
 
 void CharLine::DisplaySn(int i) const
@@ -114,13 +129,15 @@ bool CharLine::CheckChar(char ch) const
 
 CharLine Сoncatenation(const CharLine& s1, const CharLine& s2)
 {
-	CharLine r;
 	char* _s1 = s1.getS();
 	char* _s2 = s2.getS();
-	char* resStr = new char[strlen(_s1) + strlen(_s2) + 1];
+	int _N = (int)strlen(_s1) + (int)strlen(_s2) + 1;
+	char* resStr = new char[_N];
 	strcpy(resStr, _s1);
 	strcat(resStr, _s2);
-	r.setS(resStr);
+	resStr[_N - 1] = '\0';
+	CharLine r(resStr, _N - 1);
+	delete[] resStr;
 	return r;
 }
 
@@ -150,11 +167,14 @@ CharLine& CharLine::operator --() // префіксний декремент
 
 CharLine& CharLine::operator ++() // префіксний інкремент
 {
-	++N; // модифікували поточний об'єкт
-	char* resStr = new char[N + 1];
+	setN(getN() + 1);
+	//++_N; // модифікували поточний об'єкт
+	int _N = getN() + 1;
+	char* resStr = new char[_N];
 	strcpy(resStr, getS());
 	strcat(resStr, " ");
 	setS(resStr);
+	delete[] resStr;
 	return *this; // повернули модифікований об'єкт
 }
 
@@ -169,11 +189,14 @@ CharLine CharLine::operator --(int) // постфіксний декремент
 CharLine CharLine::operator ++(int) // постфіксний інкремент
 {
 	CharLine a(*this); // створили копію
-	N++; // модифікували поточний об'єкт
-	char* resStr = new char[N + 1];
+	setN(getN() + 1);
+	//N++; // модифікували поточний об'єкт
+	int _N = getN() + 1;
+	char* resStr = new char[_N];
 	strcpy(resStr, getS());
 	strcat(resStr, " ");
 	setS(resStr);
+	delete[] resStr;
 	return a; // повернули копію
 }
 
@@ -186,14 +209,15 @@ ostream& operator <<(ostream& out, const CharLine& c)
 
 istream& operator >>(istream& in, CharLine& c)
 {
-	int N;
-	cout << ".N = "; in >> N;
-	c.setN(N);
+	int _N;
+	cout << ".N = "; in >> _N;
+	c.setN(_N);
 	char* _s;
-	_s = new char[N + 1];
+	_s = new char[++_N];
 	cout << ".s = "; in >> _s;
 	c.setS(_s);
 	cout << endl;
+	delete[] _s;
 	return in;
 }
 

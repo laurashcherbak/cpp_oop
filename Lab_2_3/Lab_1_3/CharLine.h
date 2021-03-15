@@ -35,6 +35,7 @@ public:
 	CharLine(const char* s);
 	CharLine(const char* s, int N);
 	CharLine(const CharLine& c);
+	~CharLine();
 
 	CharLine& operator --();
 	CharLine& operator ++();

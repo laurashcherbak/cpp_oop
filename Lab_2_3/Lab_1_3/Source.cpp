@@ -67,7 +67,7 @@ int main()
 
 	system("pause");
 
-	cout << " : Lab 1.3 - Output : ";
+	cout << " : Lab 1.3 - Output : " << endl;
 
 	CharLine c;
 	int N;
@@ -75,7 +75,7 @@ int main()
 	cin >> N;
 	c.Read(N);
 	c.Display();
-	cout << "toString() = " << c.toString();
+	cout << "toString() = " << endl << c.toString();
 
 	c.DisplaySn(2);
 
@@ -84,10 +84,10 @@ int main()
 	cin >> ch;
 	cout << "Symbol '" << ch << "' "
 		<< (c.CheckChar(ch) ? "exists" : "not exist")
-		<< " in the String" << endl;
+		<< " in the String \"" << c.getS() << "\"" << endl;
 
 	CharLine c2;
-	c2.Init(5);
+	//c2.Init(5);
 	c2.Read(5);
 	cout << " Concatenation strings : " << Сoncatenation(c, c2).getS() << endl;
 
