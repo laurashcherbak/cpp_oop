@@ -3,7 +3,6 @@ name: MSBuild
 on:
   push:
     branches:
-      - main
       - master
       - release
 
