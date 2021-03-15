@@ -62,6 +62,8 @@ bool CharLine::setN(int value)
 
 void CharLine::setS(char* value)
 {
+	// Fix warning after upgrade VS 2019 (v16.7.5) - C26451
+
 	// Set N based on lenght of str
 	//setN(strlen(value));
 	int _N = getN() + 1;
@@ -147,14 +149,14 @@ bool CompareStr(const CharLine& s1, const CharLine& s2)
 	sout1 << s1.getS();
 	sout2 << s2.getS();
 	return ((sout1.str().find(sout2.str()) > s1.getN()
-		&& sout2.str().find(sout1.str()) > s2.getN()) ? true : false);
+		&& sout2.str().find(sout1.str()) > s2.getN()) ? false : true);
 }
 
 bool CharLine::CheckSubStr(string search) const
 {
 	stringstream sout1, sout2;
 	sout1 << getS();
-	return ((sout1.str()).find(search) > 0 ? true : false);
+	return ((sout1.str()).find(search) > 0 ? false : true);
 }
 
 
@@ -223,8 +225,9 @@ istream& operator >>(istream& in, CharLine& c)
 
 CharLine& CharLine::operator =(const CharLine& c)
 {
-	N = c.N; // змінили поле поточного об’єкта
-	s = c.s; // змінили поле поточного об’єкта
+	// змінили поле поточного об’єкта
+	setN(c.getN()); 
+	setS(c.getS());
 	return *this; // повернули посилання на поточний об’єкт
 }
 
