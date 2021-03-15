@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - release
 
 env:
   # Path to the solution file relative to the root of the project.
