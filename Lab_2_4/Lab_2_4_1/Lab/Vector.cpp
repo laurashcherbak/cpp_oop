@@ -18,7 +18,7 @@ Vector& Vector::operator --()
 		delete[] Arr;
 	Arr = new int[Size];
 	for (int i = 0; i < Size; i++)
-		Arr[i] = 0;
+		Arr[i] = m[i];
 	delete[] m;
 	return *this;
 }
@@ -33,7 +33,7 @@ Vector& Vector::operator ++()
 		delete[] Arr;
 	Arr = new int[Size];
 	for (int i = 0; i < Size - 1; i++)
-		Arr[i] = 0;
+		Arr[i] = m[i];
 	Arr[Size - 1] = 0;
 	delete[] m;
 	return *this;
@@ -50,7 +50,7 @@ Vector Vector::operator --(int)
 		delete[] Arr;
 	Arr = new int[Size];
 	for (int i = 0; i < Size; i++)
-		Arr[i] = 0;
+		Arr[i] = m[i];
 	delete[] m;
 	return a;
 }
@@ -66,7 +66,7 @@ Vector Vector::operator ++(int)
 		delete[] Arr;
 	Arr = new int[Size];
 	for (int i = 0; i < Size - 1; i++)
-		Arr[i] = 0;
+		Arr[i] = m[i];
 	Arr[Size - 1] = 0;
 	delete[] m;
 	return a;
