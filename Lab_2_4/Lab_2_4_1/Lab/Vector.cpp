@@ -10,29 +10,65 @@
 
 Vector& Vector::operator --()
 {
+	int* m = new int[Size - 1];
+	for (int i = 0; i < Size - 1; i++)
+		m[i] = Arr[i];
 	--Size;
+	if (Arr)
+		delete[] Arr;
+	Arr = new int[Size];
+	for (int i = 0; i < Size; i++)
+		Arr[i] = 0;
+	delete[] m;
 	return *this;
 }
 
 Vector& Vector::operator ++()
 {
+	int* m = new int[Size];
+	for (int i = 0; i < Size; i++)
+		m[i] = Arr[i];
 	++Size;
-	Arr[GetSize() - 1] = 0;
+	if (Arr)
+		delete[] Arr;
+	Arr = new int[Size];
+	for (int i = 0; i < Size - 1; i++)
+		Arr[i] = 0;
+	Arr[Size - 1] = 0;
+	delete[] m;
 	return *this;
 }
 
 Vector Vector::operator --(int)
 {
 	Vector a(*this);
+	int* m = new int[Size - 1];
+	for (int i = 0; i < Size - 1; i++)
+		m[i] = Arr[i];
 	Size--;
+	if (Arr)
+		delete[] Arr;
+	Arr = new int[Size];
+	for (int i = 0; i < Size; i++)
+		Arr[i] = 0;
+	delete[] m;
 	return a;
 }
 
 Vector Vector::operator ++(int)
 {
 	Vector a(*this);
+	int* m = new int[Size];
+	for (int i = 0; i < Size; i++)
+		m[i] = Arr[i];
 	Size++;
-	Arr[GetSize() - 1] = 0;
+	if (Arr)
+		delete[] Arr;
+	Arr = new int[Size];
+	for (int i = 0; i < Size - 1; i++)
+		Arr[i] = 0;
+	Arr[Size - 1] = 0;
+	delete[] m;
 	return a;
 }
 

@@ -33,7 +33,7 @@ int main()
 	cout << d << endl;
 	cout << endl;
 
-	cout << "c[2] : " << c[2] << endl;
+	cout << "c[2] : " << c[1] << endl;
 	cout << endl;
 
 	cout << " : operator increment/decrement : " << endl;

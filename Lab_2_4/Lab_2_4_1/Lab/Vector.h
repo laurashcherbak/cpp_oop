@@ -19,7 +19,7 @@ public:
 	int* GetNum() { return Arr; };
 	//void SetNum(int* val) { for (int i = 0; i < GetN(); i++) { Arr[i] = val[i]; }; };
 
-	Vector(int Size = 1)
+	Vector(int Size = 0)
 		: Size(Size)
 	{
 		Arr = new int[Size];
