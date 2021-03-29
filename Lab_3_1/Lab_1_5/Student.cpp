@@ -10,7 +10,11 @@ using namespace std;
 void Student::Init(int course, Man man)
 {
 	SetCourse(course);
-	SetMan(man);
+	//SetMan(man);
+	SetName(man.GetName());
+	SetAge(man.GetAge());
+	SetGender(man.GetGender());
+	SetWeight(man.GetWeight());
 }
 
 string Student::toString() const
@@ -91,6 +95,11 @@ Student& Student::operator =(const Student& s)
 	return *this; // повернули посилання на поточний об’єкт
 }
 
+Student& Student::operator =(const Man& m)
+{
+	this->Man::operator = (m);
+	return *this; // повернули посилання на поточний об’єкт
+}
 Student::operator string() const
 {
 	stringstream sout;

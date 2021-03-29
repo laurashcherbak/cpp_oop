@@ -34,16 +34,16 @@ int main()
 	cout << d << endl;
 	cout << endl;
 
-	cout << " : operator increment/decrement : " << endl;
-	cout << "++c : " << endl << ++c << endl;
-	cout << " c : " << endl << c << endl;
-	cout << " c++ : " << endl << c++ << endl;
-	cout << " c : " << endl << c << endl;
-	cout << "--c : " << endl << --c << endl;
-	cout << " c : " << endl << c << endl;
-	cout << " c-- : " << endl << c-- << endl;
-	cout << " c : " << endl << c << endl;
-	cout << endl;
+	//cout << " : operator increment/decrement : " << endl;
+	//cout << "++c : " << endl << ++c << endl;
+	//cout << " c : " << endl << c << endl;
+	//cout << " c++ : " << endl << c++ << endl;
+	//cout << " c : " << endl << c << endl;
+	//cout << "--c : " << endl << --c << endl;
+	//cout << " c : " << endl << c << endl;
+	//cout << " c-- : " << endl << c-- << endl;
+	//cout << " c : " << endl << c << endl;
+	//cout << endl;
 
 	cout << " : operator Type() : " << endl;
 	cout << "string(c) : " << endl << string(c) << endl;

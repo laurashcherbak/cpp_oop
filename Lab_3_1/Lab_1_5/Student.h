@@ -40,6 +40,7 @@ public:
 	friend istream& operator >>(istream& in, Student& s);
 
 	Student& operator =(const Student& s);
+	Student& operator =(const Man& m);
 
 	operator string() const;
 
