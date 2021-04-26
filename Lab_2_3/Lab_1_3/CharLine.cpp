@@ -67,6 +67,8 @@ void CharLine::setS(char* value)
 	// Set N based on lenght of str
 	//setN(strlen(value));
 	int _N = getN() + 1;
+	//if (s != nullptr)
+	//	delete[]s;
 	s = new char[_N];
 	strncpy(s, value, getN());
 	//s = value;
