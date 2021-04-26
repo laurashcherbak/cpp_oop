@@ -10,11 +10,11 @@ using namespace std;
 void Student::Init(int course, Man man)
 {
 	SetCourse(course);
-	//SetMan(man);
-	SetName(man.GetName());
-	SetAge(man.GetAge());
-	SetGender(man.GetGender());
-	SetWeight(man.GetWeight());
+	SetMan(man);
+	//SetName(man.GetName());
+	//SetAge(man.GetAge());
+	//SetGender(man.GetGender());
+	//SetWeight(man.GetWeight());
 }
 
 string Student::toString() const

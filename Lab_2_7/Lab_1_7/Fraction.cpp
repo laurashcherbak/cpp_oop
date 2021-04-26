@@ -17,7 +17,7 @@ float Fraction::toFloat() const
 {
 	stringstream sout;
 	sout << exp.GetNum() << "." << GetFrac();
-	return atof(sout.str().c_str());
+	return (float)atof(sout.str().c_str());
 };
 
 void Fraction::Init(string exp, unsigned int frac)
@@ -50,9 +50,9 @@ Fraction Add(const Fraction& a, const Fraction& b)
 	float d = a.toFloat() + b.toFloat();
 	sout << d;
 	string s = sout.str();
-	int i = s.find('.');
+	int i = (int)s.find('.');
 	e = s.substr(0, i);
-	f = atoi((s.substr(i + 1, s.length() - 1)).c_str());
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
 	r.Init(e, f);
 	return r;
 }
@@ -67,9 +67,9 @@ Fraction Sub(const Fraction& a, const Fraction& b)
 	float d = a.toFloat() - b.toFloat();
 	sout << d;
 	string s = sout.str();
-	int i = s.find('.');
+	int i = (int)s.find('.');
 	e = s.substr(0, i);
-	f = atoi((s.substr(i + 1, s.length() - 1)).c_str());
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
 	r.Init(e, f);
 	return r;
 }
@@ -84,9 +84,9 @@ Fraction Mul(const Fraction& a, const Fraction& b)
 	float d = a.toFloat() * b.toFloat();
 	sout << d;
 	string s = sout.str();
-	int i = s.find('.');
+	int i = (int)s.find('.');
 	e = s.substr(0, i);
-	f = atoi((s.substr(i + 1, s.length() - 1)).c_str());
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
 	r.Init(e, f);
 	return r;
 }
@@ -101,9 +101,9 @@ Fraction Div(const Fraction& a, const Fraction& b)
 	float d = a.toFloat() / b.toFloat();
 	sout << d;
 	string s = sout.str();
-	int i = s.find('.');
+	int i = (int)s.find('.');
 	e = s.substr(0, i);
-	f = atoi((s.substr(i + 1, s.length() - 1)).c_str());
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
 	r.Init(e, f);
 	return r;
 }
@@ -171,4 +171,102 @@ Fraction& Fraction::operator =(const Fraction& f)
 Fraction::operator string() const
 {
 	return toString();
+}
+
+Fraction operator +(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() + b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator -(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() - b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator *(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() * b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator /(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() / b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+bool operator ==(Fraction& a, Fraction& b)
+{
+	return a.toFloat() == b.toFloat();
+}
+
+bool operator !=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() != b.toFloat();
+}
+
+bool operator >=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() >= b.toFloat();
+}
+
+bool operator >(Fraction& a, Fraction& b)
+{
+	return a.toFloat() > b.toFloat();
+}
+
+bool operator <=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() <= b.toFloat();
+}
+
+bool operator <(Fraction& a, Fraction& b)
+{
+	return a.toFloat() < b.toFloat();
 }

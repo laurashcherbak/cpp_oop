@@ -121,9 +121,6 @@ istream& operator >>(istream &in, Goods& g) throw(const char*, bad_exception&)
 	cout << ".first = "; in >> f;
 	g.SetFirst(f);
 	cout << ".second = "; in >> s;
-	g.SetSecond(s);
-	cout << endl;
-
 
 	if (f < 0 && s < 0)
 	{
@@ -141,6 +138,9 @@ istream& operator >>(istream &in, Goods& g) throw(const char*, bad_exception&)
 		cout << "By reference : ";
 		throw bad_exception();
 	}
+
+	g.SetSecond(s);
+	cout << endl;
 
 	return in;
 }

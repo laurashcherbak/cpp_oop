@@ -70,6 +70,7 @@ int main()
 	Student s;
 	s.Read();
 	s.Display();
+	//cout << s << endl;
 
 	Man m = s.GetMan();
 	string name;

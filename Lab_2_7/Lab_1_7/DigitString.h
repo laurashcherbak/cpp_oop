@@ -44,6 +44,18 @@ public:
 
 	operator string() const;
 
+	friend DigitString operator +(const DigitString& a, const DigitString& b);
+	friend DigitString operator -(const DigitString& a, const DigitString& b);
+	friend DigitString operator *(const DigitString& a, const DigitString& b);
+	friend DigitString operator /(const DigitString& a, const DigitString& b);
+
+	friend bool operator ==(const DigitString& a, const DigitString& b);
+	friend bool operator !=(const DigitString& a, const DigitString& b);
+	friend bool operator >=(const DigitString& a, const DigitString& b);
+	friend bool operator <=(const DigitString& a, const DigitString& b);
+	friend bool operator >(const DigitString& a, const DigitString& b);
+	friend bool operator <(const DigitString& a, const DigitString& b);
+
 };
 
 //#pragma pack(pop)

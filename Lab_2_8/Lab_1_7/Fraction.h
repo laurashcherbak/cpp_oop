@@ -48,6 +48,18 @@ public:
 
 		operator string() const;
 
+		friend DigitString operator +(const DigitString& a, const DigitString& b);
+		friend DigitString operator -(const DigitString& a, const DigitString& b);
+		friend DigitString operator *(const DigitString& a, const DigitString& b);
+		friend DigitString operator /(const DigitString& a, const DigitString& b);
+
+		friend bool operator ==(const DigitString& a, const DigitString& b);
+		friend bool operator !=(const DigitString& a, const DigitString& b);
+		friend bool operator >=(const DigitString& a, const DigitString& b);
+		friend bool operator <=(const DigitString& a, const DigitString& b);
+		friend bool operator >(const DigitString& a, const DigitString& b);
+		friend bool operator <(const DigitString& a, const DigitString& b);
+
 	};
 
 	Fraction::DigitString GetExp() const { return exp; }
@@ -83,6 +95,19 @@ public:
 	Fraction& operator =(const Fraction& f);
 
 	operator string() const;
+
+	friend Fraction operator +(const Fraction& a, const Fraction& b);
+	friend Fraction operator -(const Fraction& a, const Fraction& b);
+	friend Fraction operator *(const Fraction& a, const Fraction& b);
+	friend Fraction operator /(const Fraction& a, const Fraction& b);
+
+	friend bool operator ==(Fraction a, Fraction& b);
+	friend bool operator !=(Fraction a, Fraction& b);
+	friend bool operator >=(Fraction a, Fraction& b);
+	friend bool operator >(Fraction a, Fraction& b);
+	friend bool operator <=(Fraction a, Fraction& b);
+	friend bool operator <(Fraction a, Fraction& b);
+
 
 private:
 	DigitString exp;

@@ -54,6 +54,16 @@ int main()
 	cin >> g1 >> g2 >> g3;
 	cout << g1 << endl << g2 << endl << g3 << endl;
 
+	cout << "+ : " << g1 + g2 << endl;
+	cout << "- : " << g1 - g2 << endl;
+	cout << "* : " << g1 * g2 << endl;
+	cout << "/ : " << g1 / g2 << endl;
+
+	cout << "g1 and g2 are " << (g1.toFloat() == g2.toFloat() ? "" : "not ") << "equal" << endl;
+	//cout << "g1 and g2 are " << (g1 == g2 ? "" : "not ") << "equal" << endl;
+	cout << endl;
+
+
 	cout << " : operator = : " << endl;
 	g3 = g2 = c;
 	cout << "g3 : " << c << endl;

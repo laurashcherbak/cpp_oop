@@ -173,6 +173,104 @@ Fraction::operator string() const
 	return toString();
 }
 
+Fraction operator +(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() + b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator -(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() - b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator *(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() * b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+Fraction operator /(const Fraction& a, const Fraction& b)
+{
+	Fraction r;
+	stringstream sout;
+	string e;
+	unsigned int f;
+
+	float d = a.toFloat() / b.toFloat();
+	sout << d;
+	string s = sout.str();
+	int i = (int)s.find('.');
+	e = s.substr(0, i);
+	f = atoi((s.substr(++i, s.length() - 1)).c_str());
+	r.Init(e, f);
+	return r;
+}
+
+bool operator ==(Fraction& a, Fraction& b)
+{
+	return a.toFloat() == b.toFloat();
+}
+
+bool operator !=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() != b.toFloat();
+}
+
+bool operator >=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() >= b.toFloat();
+}
+
+bool operator >(Fraction& a, Fraction& b)
+{
+	return a.toFloat() > b.toFloat();
+}
+
+bool operator <=(Fraction& a, Fraction& b)
+{
+	return a.toFloat() <= b.toFloat();
+}
+
+bool operator <(Fraction& a, Fraction& b)
+{
+	return a.toFloat() < b.toFloat();
+}
+
 string Fraction::DigitString::toString() const {
 	stringstream sout;
 	sout << GetNum();
@@ -307,4 +405,72 @@ Fraction::DigitString& Fraction::DigitString::operator =(const Fraction::DigitSt
 Fraction::DigitString::operator string() const
 {
 	return toString();
+}
+
+Fraction::DigitString operator +(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	Fraction::DigitString r;
+	stringstream sout;
+	sout << (a.toInt() + b.toInt());
+	r.SetNum(sout.str());
+	return r;
+}
+
+Fraction::DigitString operator -(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	Fraction::DigitString r;
+	stringstream sout;
+	sout << a.toInt() - b.toInt();
+	r.SetNum(sout.str());
+	return r;
+}
+
+Fraction::DigitString operator *(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	Fraction::DigitString r;
+	stringstream sout;
+	sout << a.toInt() * b.toInt();
+	r.SetNum(sout.str());
+	return r;
+}
+
+Fraction::DigitString operator /(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	Fraction::DigitString r;
+	stringstream sout;
+	sout << a.toInt() / b.toInt();
+	r.SetNum(sout.str());
+	return r;
+}
+
+bool operator ==(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() == b.toInt();
+	//return true;
+	//return strcmp(a.toString().c_str(), b.toString().c_str()) > 0;
+}
+
+bool operator !=(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() != b.toInt();
+}
+
+bool operator >=(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() >= b.toInt();
+}
+
+bool operator >(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() > b.toInt();
+}
+
+bool operator <=(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() <= b.toInt();
+}
+
+bool operator <(const Fraction::DigitString& a, const Fraction::DigitString& b)
+{
+	return a.toInt() < b.toInt();
 }

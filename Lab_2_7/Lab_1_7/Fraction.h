@@ -47,6 +47,18 @@ public:
 
 	operator string() const;
 
+	friend Fraction operator +(const Fraction& a, const Fraction& b);
+	friend Fraction operator -(const Fraction& a, const Fraction& b);
+	friend Fraction operator *(const Fraction& a, const Fraction& b);
+	friend Fraction operator /(const Fraction& a, const Fraction& b);
+
+	friend bool operator ==(Fraction a, Fraction& b);
+	friend bool operator !=(Fraction a, Fraction& b);
+	friend bool operator >=(Fraction a, Fraction& b);
+	friend bool operator >(Fraction a, Fraction& b);
+	friend bool operator <=(Fraction a, Fraction& b);
+	friend bool operator <(Fraction a, Fraction& b);
+
 };
 
 //#pragma pack(pop)
