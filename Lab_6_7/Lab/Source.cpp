@@ -24,8 +24,8 @@ Array func(double arr[], const int size)
 	Array::value_type B = 50;
 	for (int i = 0; i < size; i++)
 	{
-		res[i] = A + rand() % int(B - A + 1);
-		//res[i] = i - 5;
+		//res[i] = A + rand() % int(B - A + 1);
+		res[i] = i - 5;
 	}
 	cout << "Array with random values : { " << res << " }" << endl;
 
@@ -33,7 +33,7 @@ Array func(double arr[], const int size)
 	res.commonPart();
 	cout << "Array plus two additional elements : { " << res << " }" << endl;
 
-	res.individualPart();
+	//res.individualPart();
 	//cout << res;	
 
 	return res;

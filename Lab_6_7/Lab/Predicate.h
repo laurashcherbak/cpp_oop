@@ -76,7 +76,7 @@ public:
 template<class T>
 bool search(T* begin, T* end, T* begin2, T* end2)
 {
-	T* from = begin;
+	//T* from = begin;
 	T* from2 = begin2;
 	for (T* from = begin; from < end; from++) // from - ітератор першого контейнера
 	{
@@ -99,7 +99,7 @@ bool search(T* begin, T* end, T* begin2, T* end2)
 template<class T>
 bool search_if(T* begin, T* end, T* begin2, T* end2, Predicate<T>& p)
 {
-	T* from = begin;
+	//T* from = begin;
 	T* from2 = begin2;
 
 	for (T* from = begin; from < end; from++) // from - ітератор першого контейнера
